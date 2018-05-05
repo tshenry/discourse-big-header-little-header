@@ -1,0 +1,9 @@
+// Hide header bar when landscape
+@media screen and (orientation:landscape) { 
+    .d-header {
+        position: absolute;
+    } 
+    .scrolled-down {
+        .d-header { display: none; }
+    }
+}
