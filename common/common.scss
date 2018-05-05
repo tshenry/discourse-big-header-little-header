@@ -1,0 +1,62 @@
+//         Style the elements created in the </head> tab
+// ---------------------------------------------------------------------
+
+// Position the logo
+a#logo-link {
+    position: absolute;
+    top: 10px;
+}
+// Size the logo image
+img.logo-really-big {
+    max-height: #{$logo_height}px !important;
+}
+
+
+//         Style the header according to scroll position
+// ---------------------------------------------------------------------
+
+// Keep the header in place and make it transparent
+header.d-header.clearfix {
+    position: absolute;
+    background: none;
+    box-shadow: none;
+}
+// Hide the default logos
+.d-header {
+    .logo-small, .logo-big { 
+        visibility: hidden;
+    }
+}
+
+// This class is added dynamically with jQuery in the </head> tab
+.scrolled-down {
+    // Return to default header styling
+    header.d-header.clearfix {
+        position: fixed !important;
+        background-color: $secondary;
+        box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.25);
+    }
+    // Show the default logo
+    .d-header {
+        .logo-small, .logo-big {
+            visibility: visible !important;
+        }
+    }
+    // Hide the large logo
+    img.logo-really-big {
+        display: none;   
+    }
+}
+
+
+//       Adjust other elements to accommodate the custom header
+// ---------------------------------------------------------------------
+
+// Prevent the logo from appearing above the reply area when expanded
+#reply-control {
+    z-index: 1002;
+}
+// Add adjusted padding to the main-outlet 
+#main-outlet {
+    padding-top: calc(#{$logo_height}px + 30px);
+}
