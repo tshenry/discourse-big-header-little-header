@@ -1,0 +1,13 @@
+logo_url:
+  default: ""
+  type: string
+  description: "This is the source link to your large logo file"
+logo_alt:
+  default: "Site Name"
+  type: string
+  description: "The alt text to display for the large logo image"
+logo_height:
+  default: 120
+  type: integer
+  description: "Set the height of the large logo"
+  min: 0
