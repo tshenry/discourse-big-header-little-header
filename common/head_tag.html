@@ -1,0 +1,30 @@
+<script type="text/discourse-plugin" version="0.8.18">
+    $(document).ready(function() {
+        var lastScrollTop = 0;
+        var body = $("body");
+        var scrollMax = settings.logo_height + 30;
+        $(window).scroll(function() {
+            var scroll = $(this).scrollTop();
+            // If scrolling down the page AND a set number of pixels have scrolled
+            // out of view AND the scrolled-down class isn't already applied, add 
+            // the scrolled-down class
+            if (lastScrollTop < scroll && scroll > scrollMax && !body.hasClass("scrolled-down")) {
+                body.addClass("scrolled-down");
+            // If scrolling up the page AND less than a set number of pixels are 
+            // scrolled out of view AND the scrolled-down has been applied, remove 
+            // the scrolled-down class
+            } else if (lastScrollTop > scroll && scroll <= scrollMax && body.hasClass("scrolled-down")) {
+                body.removeClass("scrolled-down");
+            }
+            lastScrollTop = scroll;
+        });
+    });
+
+    api.decorateWidget('header:after', helper => {
+        return helper.h('div#logo-container.wrap', 
+                    helper.h('a#logo-link', { href: '/', attributes: { 'data-auto-route': 'true' } },
+                        helper.h('img#site-logo.logo-really-big', { src: settings.logo_url, alt: settings.logo_alt })
+                    )
+                )
+    });
+</script>
