@@ -53,6 +53,9 @@ header.d-header.clearfix {
         #site-logo {
             height: 2.57em;
         }
+        #logo-container.wrap {
+            height: unset;
+        }
     }
     // Hide the large logo
     img.logo-really-big {
