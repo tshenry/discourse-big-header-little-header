@@ -42,7 +42,7 @@ header.d-header.clearfix {
     // Return to default header styling
     header.d-header.clearfix {
         position: fixed !important;
-        background-color: $secondary;
+        background-color: $header-background;
         box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.25);
     }
     // Show the default logo
