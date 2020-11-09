@@ -16,19 +16,23 @@ img.logo-really-big {
 // ---------------------------------------------------------------------
 
 // Keep the header in place and make it transparent
-header.d-header.clearfix {
-    display: block;
-    position: absolute;
-    background: none;
-    box-shadow: none;
+.d-header-wrap {
+    position: relative;
+    header.d-header.clearfix {
+        display: block;
+        position: absolute;
+        background: none;
+        box-shadow: none;
+    }
 }
+
 // Hide the default logos and get rid of default height
 .d-header {
     .logo-small, .logo-big, .title a { 
         visibility: hidden;
     }
     #site-logo {
-        height: unset;
+        height: #{$logo_height}px;
     }
 }
 
@@ -39,9 +43,13 @@ header.d-header.clearfix {
 
 // This class is added dynamically with jQuery in the </head> tab
 .scrolled-down {
+    #main {
+        margin-top: -60px;
+    }
     // Return to default header styling
+    .d-header-wrap,
     header.d-header.clearfix {
-        position: fixed !important;
+        position: sticky !important;
         background-color: $header-background;
         box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.25);
     }
