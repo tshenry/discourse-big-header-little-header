@@ -23,3 +23,8 @@ logo_height:
   type: integer
   description: "Set the height of the large logo"
   min: 0
+mobile_logo_height:
+  default: 120
+  type: integer
+  description: "Set the height of the large mobile logo"
+  min: 0

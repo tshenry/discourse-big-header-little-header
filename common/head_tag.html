@@ -1,7 +1,10 @@
 <script type="text/discourse-plugin" version="0.8.18">
+  const isMobileView = api.container.lookup("site:main").mobileView;
+  const logoHeight = isMobileView ? settings.mobile_logo_height : settings.logo_height;
+
   $(document).ready(function() {
     const body = $("body");
-    const scrollMax = settings.logo_height + 30;
+    const scrollMax = logoHeight + 30;
     let lastScrollTop = 0;
     $(window).scroll(function() {
       const scroll = $(this).scrollTop();

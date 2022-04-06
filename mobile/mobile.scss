@@ -7,3 +7,20 @@
         .d-header { display: none; }
     }
 }
+
+// Size the logo image
+img.logo-really-big {
+    max-height: #{$mobile_logo_height}px !important;
+}
+
+// Hide the default logos and get rid of default height
+.d-header {
+    #site-logo {
+        height: #{$mobile_logo_height}px;
+    }
+}
+
+// Add adjusted padding to the main-outlet
+#main-outlet {
+    padding-top: calc(#{$mobile_logo_height}px + 30px);
+}
