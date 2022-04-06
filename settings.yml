@@ -1,7 +1,19 @@
 logo_url:
   default: ""
   type: string
-  description: "This is the source link to your large logo file"
+  description: "The default logo"
+mobile_logo_url:
+  default: ""
+  type: upload
+  description: "Defaults to logo_url if not set"
+logo_url_dark:
+  default: ""
+  type: upload
+  description: "Defaults to logo_url if not set"
+mobile_logo_url_dark:
+  default: ""
+  type: upload
+  description: "Defaults to logo_url_dark if not set, then falls back to mobile_logo_url"
 logo_alt:
   default: "Site Name"
   type: string
